@@ -1,6 +1,7 @@
 # mapx
 
-A very simple library for performing powerful map transformations.
+A very simple library for performing powerful map transformations in
+Clojure.
 
 The problem that this library solves is needing to transform maps from
 one domain (e.g. results fetched from a database) into another domain
