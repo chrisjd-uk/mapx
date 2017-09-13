@@ -1,5 +1,7 @@
 # mapx
 
+[![Continuous Integration status](https://api.travis-ci.org/chrisjd-uk/mapx.png)](http://travis-ci.org/chrisjd-uk/mapx)
+
 A very simple library for performing powerful map transformations in
 Clojure.
 
