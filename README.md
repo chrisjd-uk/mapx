@@ -1,7 +1,7 @@
 # mapx
 
 [![Clojars Project](https://img.shields.io/clojars/v/chrisjd/mapx.svg)](https://clojars.org/chrisjd/mapx)
-[![Continuous Integration status](https://api.travis-ci.org/chrisjd-uk/mapx.png)](http://travis-ci.org/chrisjd-uk/mapx)
+[![Continuous Integration status](https://travis-ci.org/chrisjd-uk/mapx.svg?branch=master)](http://travis-ci.org/chrisjd-uk/mapx)
 
 A very simple library for performing powerful map transformations in
 Clojure.
