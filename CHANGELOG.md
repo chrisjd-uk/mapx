@@ -15,5 +15,6 @@ this file. This change log follows the conventions of
 ## 0.1.0 - 2017-09-13
 - Initial code.
 
+[Unreleased]: https://github.com/chrisjd-uk/mapx/compare/0.1.2...HEAD
 [0.1.2]: https://github.com/chrisjd-uk/mapx/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/chrisjd-uk/mapx/compare/0.1.0...0.1.1
