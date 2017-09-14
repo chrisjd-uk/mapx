@@ -1,11 +1,10 @@
 # mapx
 
+[![Clojars Project](https://img.shields.io/clojars/v/chrisjd/mapx.svg)](https://clojars.org/chrisjd/mapx)
 [![Continuous Integration status](https://api.travis-ci.org/chrisjd-uk/mapx.png)](http://travis-ci.org/chrisjd-uk/mapx)
 
 A very simple library for performing powerful map transformations in
 Clojure.
-
-[![Clojars Project](https://img.shields.io/clojars/v/chrisjd/mapx.svg)](https://clojars.org/chrisjd/mapx)
 
 The problem that this library solves is needing to transform maps from
 one domain (e.g. results fetched from a database) into another domain
