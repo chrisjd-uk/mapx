@@ -5,6 +5,7 @@ this file. This change log follows the conventions of
 [keepachangelog.com](http://keepachangelog.com/).
 
 ## [Unreleased]
+- Add optional `updates` argument to `projection`.
 
 ## [0.1.1] - 2017-09-14
 - Add `projection` function.

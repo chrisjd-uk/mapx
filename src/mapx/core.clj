@@ -26,9 +26,15 @@
 (defn projection
   "Does a select and rename in one operation.  The keys in the rename
   map are used as the selection seq, then the map itself is used to
-  rename keys."
-  [m rename-m]
-  (map-xform m
-             :select (keys rename-m)
-             :rename rename-m))
+  rename keys.
+
+  If any updates are provided, they are applied after the select, but
+  before the rename (as with map-xform)."
+  ([m rename-m]
+   (projection m rename-m []))
+  ([m rename-m updates]
+   (map-xform m
+              :select (keys rename-m)
+              :update updates
+              :rename rename-m)))
   

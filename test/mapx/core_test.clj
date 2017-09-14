@@ -31,3 +31,9 @@
 (deftest test-projection
   (is (= {:x 1 :z 3}
          (projection in {:a :x, :c :z}))))
+
+(deftest test-projection-and-updates
+  (is (= {:x -10 :z -30}
+         (projection in {:a :x, :c :z}
+                     {:a (partial * -10)
+                      :c (partial * -10)}))))
