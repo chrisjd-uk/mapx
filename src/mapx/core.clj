@@ -8,14 +8,11 @@
   in this order -- keys are selected, deleted, updated and renamed
   -- and all are optional.
 
-  :select -- A seq of keys to select from the input map.
-  
-  :delete -- A seq of keys to delete from the input.
-  
-  :update -- A map from keys in the input map to functions to apply to
-  the corresponding values using update.
-
-  :rename -- A map from old keys to new keys."
+  :select - A seq of keys to select from the input map.
+  :delete - A seq of keys to delete from the input.
+  :update - A map from keys in the input map to functions to apply to
+            the corresponding values using update.
+  :rename - A map from old keys to new keys."
   [m & {:as xform}]
   (cond-> m
     (contains? xform :select) (select-keys (:select xform))
