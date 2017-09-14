@@ -17,10 +17,12 @@ This process generally requires 3 steps:
 - Rename keys.
 
 mapx provides just one core function to achieve this:
-`mapx.core/map-xform`.
+`mapx.core/map-xform`.  An additional helper function,
+`mapx.core/projection` is used as to perform a select and rename more
+succinctly when the keys of the rename operation are to be selected.
 
 
-## Usage
+## Example
 
 For the examples below:
 
@@ -66,6 +68,14 @@ user> (mx/map-xform {:a 1 :b 2 :c 3}
                     :update {:a str}
                     :rename {:a :foo})
 {:foo "1"}
+```
+
+### Projection
+
+``` clojure
+user> (mx/projection {:a 1 :b 2 :c 3}
+                     {:a :x :c :z})
+{:x 1, :z 3}
 ```
 
 

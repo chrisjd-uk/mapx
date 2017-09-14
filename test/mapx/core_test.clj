@@ -27,3 +27,7 @@
                     :delete [:e]
                     :update {:a (partial * 50), :c -}
                     :rename {:a :x, :c :z}))))
+
+(deftest test-projection
+  (is (= {:x 1 :z 3}
+         (projection in {:a :x, :c :z}))))

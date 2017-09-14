@@ -22,3 +22,13 @@
                                         %
                                         (:update xform)))
     (contains? xform :rename) (set/rename-keys (:rename xform))))
+
+(defn projection
+  "Does a select and rename in one operation.  The keys in the rename
+  map are used as the selection seq, then the map itself is used to
+  rename keys."
+  [m rename-m]
+  (map-xform m
+             :select (keys rename-m)
+             :rename rename-m))
+  
