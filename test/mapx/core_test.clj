@@ -4,6 +4,10 @@
 
 (def in {:a 1 :b 2 :c 3 :d 4 :e 5})
 
+(deftest test-or
+  (is (= {:a 1 :b 2 :c 3 :d 4 :e 5 :f 7}
+         (map-xform in :or {:a 123, :f 7}))))
+
 (deftest test-select
   (is (= {:a 1 :c 3}
          (map-xform in :select [:a :c]))))
