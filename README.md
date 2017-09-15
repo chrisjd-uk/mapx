@@ -12,14 +12,12 @@ one domain (e.g. results fetched from a database) into another domain
 
 This process generally requires 3 steps:
 
-- Select or delete certain keys from the input map.
+- Select, delete or insert certain keys from the input map.
 - Apply transformations to values in the map.
 - Rename keys.
 
-mapx provides just one core function to achieve this:
-`mapx.core/map-xform`.  An additional helper function,
-`mapx.core/projection` is used as to perform a select and rename more
-succinctly when the keys of the rename operation are to be selected.
+mapx provides just one core function to achieve this in a declarative,
+clear manner: `mapx.core/map-xform`.
 
 
 ## Example
@@ -29,6 +27,13 @@ For the examples below:
 ```clojure
 user> (require '[mapx.core :as mx])
 nil
+```
+
+### Inserting Missing Keys
+
+``` clojure
+user> (mx/map-xform {:a 1 :b 2 :c 3} :or {:a 123 :d 4})
+{:a 1, :b 2, :c 3, :d 4}
 ```
 
 ### Selecting Keys
@@ -73,8 +78,8 @@ user> (mx/map-xform {:a 1 :b 2 :c 3}
 ### Projection
 
 ``` clojure
-user> (mx/projection {:a 1 :b 2 :c 3}
-                     {:a :x :c :z})
+user> (mx/map-xform {:a 1 :b 2 :c 3}
+                    :project {:a :x :c :z})
 {:x 1, :z 3}
 ```
 
