@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [0.1.4] - 2017-09-15
 - Fix NullPointerException for missing key during `:update`.
 
 ## [0.1.3] - 2017-09-15
@@ -17,7 +17,7 @@
 ## 0.1.0 - 2017-09-13
 - Initial code.
 
-[Unreleased]: https://github.com/chrisjd-uk/mapx/compare/0.1.3...HEAD
+[0.1.4]: https://github.com/chrisjd-uk/mapx/compare/0.1.3...0.1.4
 [0.1.3]: https://github.com/chrisjd-uk/mapx/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/chrisjd-uk/mapx/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/chrisjd-uk/mapx/compare/0.1.0...0.1.1
