@@ -5,6 +5,9 @@ this file. This change log follows the conventions of
 [keepachangelog.com](http://keepachangelog.com/).
 
 ## [Unreleased]
+- Remove `projection` function and add it as a `:project` option to
+  `map-xform` instead.
+- Add `:or` option.
 
 ## [0.1.2] - 2017-09-14
 - Add optional `updates` argument to `projection`.
