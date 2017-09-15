@@ -17,8 +17,12 @@
          (map-xform in :delete [:c :d]))))
 
 (deftest test-update
-  (is (= {:a 1 :b -2 :c 3 :d 40 :e 5}
-         (map-xform in :update {:b -, :d (partial * 10)}))))
+  (testing "simple case"
+    (is (= {:a 1 :b -2 :c 3 :d 40 :e 5}
+           (map-xform in :update {:b -, :d (partial * 10)}))))
+  (testing "missing key"
+    (is (= {:a 1 :b 2 :c 3 :d 40 :e 5}
+           (map-xform in :update {:z -, :d (partial * 10)})))))
 
 (deftest test-rename
   (is (= {:x 1 :y 2 :z 3 :d 4 :e 5}

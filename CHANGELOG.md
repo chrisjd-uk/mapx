@@ -1,6 +1,7 @@
 # Change Log
 
 ## [Unreleased]
+- Fix NullPointerException for missing key during `:update`.
 
 ## [0.1.3] - 2017-09-15
 - Remove `projection` function and add it as a `:project` option to

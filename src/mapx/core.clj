@@ -26,7 +26,9 @@
     (contains? xform :select)  (select-keys (:select xform))
     (contains? xform :delete)  (#(reduce dissoc % (:delete xform)))
     (contains? xform :update)  (#(reduce (fn [m [k f]]
-                                           (update m k f))
+                                           (if (contains? m k)
+                                             (update m k f)
+                                             m))
                                          %
                                          (:update xform)))
     (contains? xform :rename)  (set/rename-keys (:rename xform))
