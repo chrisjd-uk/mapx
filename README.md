@@ -17,7 +17,7 @@ This process generally requires 3 steps:
 - Rename keys.
 
 mapx provides just one core function to achieve this in a declarative,
-clear manner: `mapx.core/map-xform`.
+clear manner: `mapx.core/transform`.
 
 
 ## Example
@@ -32,42 +32,42 @@ nil
 ### Inserting Missing Keys
 
 ``` clojure
-user> (mx/map-xform {:a 1 :b 2 :c 3} :or {:a 123 :d 4})
+user> (mx/transform {:a 1 :b 2 :c 3} :or {:a 123 :d 4})
 {:a 1, :b 2, :c 3, :d 4}
 ```
 
 ### Selecting Keys
 
 ```clojure
-user> (mx/map-xform {:a 1 :b 2 :c 3} :select [:a :c])
+user> (mx/transform {:a 1 :b 2 :c 3} :select [:a :c])
 {:a 1, :c 3}
 ```
 
 ### Deleting Keys
 
 ```clojure
-user> (mx/map-xform {:a 1 :b 2 :c 3} :delete [:a])
+user> (mx/transform {:a 1 :b 2 :c 3} :delete [:a])
 {:b 2, :c 3}
 ```
 
 ### Updating Values
 
 ```clojure
-user> (mx/map-xform {:a 1 :b 2 :c 3} :update {:a inc, :c (partial * 20)})
+user> (mx/transform {:a 1 :b 2 :c 3} :update {:a inc, :c (partial * 20)})
 {:a 2, :b 2, :c 60}
 ```
 
 ### Renaming Keys
 
 ```clojure
-user> (mx/map-xform {:a 1 :b 2 :c 3} :rename {:a :x, :b :y, :c :z})
+user> (mx/transform {:a 1 :b 2 :c 3} :rename {:a :x, :b :y, :c :z})
 {:x 1, :y 2, :z 3}
 ```
 
 ### All Together
 
 ```clojure
-user> (mx/map-xform {:a 1 :b 2 :c 3}
+user> (mx/transform {:a 1 :b 2 :c 3}
                     :select [:a :c]
                     :delete [:c]
                     :update {:a str}
@@ -78,7 +78,7 @@ user> (mx/map-xform {:a 1 :b 2 :c 3}
 ### Projection
 
 ``` clojure
-user> (mx/map-xform {:a 1 :b 2 :c 3}
+user> (mx/transform {:a 1 :b 2 :c 3}
                     :project {:a :x :c :z})
 {:x 1, :z 3}
 ```

@@ -1,7 +1,7 @@
 (ns mapx.core
   (:require [clojure.set :as set]))
 
-(defn map-xform
+(defn transform
   "Takes an input map and transforms it according to the rules
   described in xform.  xform is a map of keys :or, :select, :delete,
   :update, :rename and :project.  The transformations are applied
