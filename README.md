@@ -29,58 +29,68 @@ user> (require '[mapx.core :as mx])
 nil
 ```
 
-### Inserting Missing Keys
+Inserting missing keys:
 
 ``` clojure
 user> (mx/transform {:a 1 :b 2 :c 3} :or {:a 123 :d 4})
 {:a 1, :b 2, :c 3, :d 4}
 ```
 
-### Selecting Keys
+Selecting keys:
 
 ```clojure
 user> (mx/transform {:a 1 :b 2 :c 3} :select [:a :c])
 {:a 1, :c 3}
 ```
 
-### Deleting Keys
+Deleting keys:
 
 ```clojure
 user> (mx/transform {:a 1 :b 2 :c 3} :delete [:a])
 {:b 2, :c 3}
 ```
 
-### Updating Values
+Updating values:
 
 ```clojure
 user> (mx/transform {:a 1 :b 2 :c 3} :update {:a inc, :c (partial * 20)})
 {:a 2, :b 2, :c 60}
 ```
 
-### Renaming Keys
+Renaming keys:
 
 ```clojure
 user> (mx/transform {:a 1 :b 2 :c 3} :rename {:a :x, :b :y, :c :z})
 {:x 1, :y 2, :z 3}
 ```
 
-### All Together
+All together:
 
 ```clojure
 user> (mx/transform {:a 1 :b 2 :c 3}
-                    :select [:a :c]
+                    :or {:a 123, :d 456}
+                    :select [:a :c :d]
                     :delete [:c]
                     :update {:a str}
                     :rename {:a :foo})
-{:foo "1"}
+{:foo "1", :d 456}
 ```
 
-### Projection
+Projection:
 
 ``` clojure
 user> (mx/transform {:a 1 :b 2 :c 3}
                     :project {:a :x :c :z})
 {:x 1, :z 3}
+```
+
+Update and project:
+
+``` clojure
+user> (mx/transform {:a 1 :b 2 :c 3}
+                    :update {:a inc, :c dec}
+                    :project {:a :x :c :z})
+{:x 2, :z 2}
 ```
 
 
