@@ -19,8 +19,21 @@ This process generally requires 3 steps:
 mapx provides just one core function to achieve this in a declarative,
 clear manner: `mapx.core/transform`.
 
+## Installation
 
-## Example
+Add the following to your `project.clj`:
+
+```
+[chrisjd/mapx "0.2.0"]
+```
+
+
+## Documentation
+
+- [API](https://chrisjd-uk.github.io/mapx/)
+
+
+## Usage
 
 For the examples below:
 
@@ -91,6 +104,56 @@ user> (mx/transform {:a 1 :b 2 :c 3}
                     :update {:a inc, :c dec}
                     :project {:a :x :c :z})
 {:x 2, :z 2}
+```
+
+
+## Typical Example #1
+
+A typical example of how mapx can be used in real projects:
+
+``` clojure
+(defn make-account
+  "Create a new account."
+  [& {:as opts}]
+  {:post [(s/valid? :data/account %)]}
+  (transform opts
+             :or {:role :user}
+             :project {:email        :data.account/email
+                       :password     :data.account/password
+                       :role         :data.account/role
+                       :user         :data.account/user
+                       :subscription :data.account/subscription}))
+
+```
+
+Here, we provide a default value for `:role`, but expect the other
+fields to be specified.  The post-condition on the function uses
+[spec](https://clojure.org/guides/spec/) to ensure that what we
+produce is a well-formed account.
+
+
+## Typical Example #2
+
+Using with [speconv](https://github.com/chrisjd-uk/speconv) to
+succinctly define conversion functions to map the same data between
+two distinct (and spec-validated) contexts:
+
+``` clojure
+(conversion :db/subscription :data/subscription
+            [in]
+            (transform in
+                       :project {:subscription/expires       :data.subscription/expires
+                                 :subscription/period-charge :data.subscription/period-charge
+                                 :subscription/period-length :data.subscription/period-length
+                                 :db/id                      :data/entity-id}))
+
+(conversion :data/subscription :db/subscription
+            [in]
+            (transform in
+                       :project {:data.subscription/expires       :subscription/expires
+                                 :data.subscription/period-charge :subscription/period-charge
+                                 :data.subscription/period-length :subscription/period-length
+                                 :data/entity-id                  :db/id}))
 ```
 
 
