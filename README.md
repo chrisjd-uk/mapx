@@ -30,7 +30,7 @@ Add the following to your `project.clj`:
 
 ## Documentation
 
-- [API](https://chrisjd-uk.github.io/mapx/)
+- [API Docs](https://chrisjd-uk.github.io/mapx/)
 
 
 ## Usage
