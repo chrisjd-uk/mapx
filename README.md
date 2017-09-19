@@ -156,6 +156,10 @@ two distinct (and spec-validated) contexts:
                                  :data/entity-id                  :db/id}))
 ```
 
+The benefit being that we *explicitly* state which data is to be
+carried across domains without the risk of leaking sensitive or
+internal information accidentally.
+
 
 ## License
 
