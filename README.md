@@ -1,5 +1,6 @@
 # mapx
 
+[![License](https://img.shields.io/github/license/chrisjd-uk/mapx.svg)](LICENSE)
 [![Clojars Project](https://img.shields.io/clojars/v/chrisjd/mapx.svg)](https://clojars.org/chrisjd/mapx)
 [![Build Status](https://travis-ci.org/chrisjd-uk/mapx.svg?branch=master)](https://travis-ci.org/chrisjd-uk/mapx)
 
