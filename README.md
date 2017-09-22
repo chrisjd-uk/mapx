@@ -166,5 +166,4 @@ internal information accidentally.
 
 Copyright © 2017 Chris J-D
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the MIT License: https://opensource.org/licenses/MIT
