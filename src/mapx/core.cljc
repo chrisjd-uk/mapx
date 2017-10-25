@@ -8,7 +8,10 @@
   specifically in this order -- keys are maybe added, selected,
   deleted, updated and renamed -- and all are optional.  :project is a
   convenience that combines the behaviour of :select and :rename; it
-  selects the keys from the map and then renames as :rename does.
+  selects the keys from the map and then renames as :rename does.  If
+  both :select and :project are specified, the values for :select and
+  keys from :project are both selected (but the :project keys then get
+  renamed, of course).
 
   :or      - A map of key/value pairs to add to the map if the keys are
              missing.
@@ -23,7 +26,8 @@
   [m & {:as xform}]
   (cond-> m
     (contains? xform :or)      (merge (:or xform) m)
-    (contains? xform :select)  (select-keys (:select xform))
+    (contains? xform :select)  (select-keys (concat (keys (:project xform))
+                                                    (:select xform)))
     (contains? xform :delete)  (#(reduce dissoc % (:delete xform)))
     (contains? xform :update)  (#(reduce (fn [m [k f]]
                                            (if (contains? m k)
@@ -32,5 +36,6 @@
                                          %
                                          (:update xform)))
     (contains? xform :rename)  (set/rename-keys (:rename xform))
-    (contains? xform :project) (-> (select-keys (keys (:project xform)))
+    (contains? xform :project) (-> (select-keys (concat (keys (:project xform))
+                                                        (:select xform)))
                                    (set/rename-keys (:project xform)))))

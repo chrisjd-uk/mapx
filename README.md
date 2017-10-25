@@ -25,7 +25,7 @@ clear manner: `mapx.core/transform`.
 Add the following to your `project.clj`:
 
 ```
-[chrisjd/mapx "0.2.0"]
+[chrisjd/mapx "0.2.1"]
 ```
 
 

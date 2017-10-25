@@ -1,7 +1,9 @@
 # Change Log
 
-## [Unreleased]
+## [0.2.1] - 2017-10-25
 - Change licence to MIT.
+- If both `:select` and `:project` are specified, don't preclude the
+  `:select`.
 
 ## [0.2.0] - 2017-09-18
 ### Changes
@@ -28,7 +30,7 @@
 ## 0.1.0 - 2017-09-13
 - Initial code.
 
-[Unreleased]: https://github.com/chrisjd-uk/mapx/compare/0.2.0...HEAD
+[0.2.1]: https://github.com/chrisjd-uk/mapx/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/chrisjd-uk/mapx/compare/0.1.5...0.2.0
 [0.1.5]: https://github.com/chrisjd-uk/mapx/compare/0.1.4...0.1.5
 [0.1.4]: https://github.com/chrisjd-uk/mapx/compare/0.1.3...0.1.4

@@ -46,3 +46,9 @@
          (transform in
                     :update {:a (partial * 50), :c -}
                     :project {:a :x, :c :z}))))
+
+(deftest test-project-and-select-ok
+  (is (= {:x 1 :z 3 :e 5}
+         (transform in
+                    :select [:e]
+                    :project {:a :x, :c :z}))))
