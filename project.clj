@@ -1,4 +1,4 @@
-(defproject chrisjd/mapx "0.2.1"
+(defproject chrisjd/mapx "0.2.2"
   :description "A simple library for powerful map transformations."
   :url "https://github.com/chrisjd-uk/mapx"
   :license {:name "The MIT License"

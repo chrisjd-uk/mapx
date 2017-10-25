@@ -13,6 +13,7 @@
   keys from :project are both selected (but the :project keys then get
   renamed, of course).
 
+  :assoc   - A map of key/value pairs to overwrite in the map.
   :or      - A map of key/value pairs to add to the map if the keys are
              missing.
   :select  - A seq of keys to select from the input map.
@@ -25,10 +26,11 @@
              rename operation."
   [m & {:as xform}]
   (cond-> m
+    (contains? xform :assoc)   (merge m (:assoc xform))
     (contains? xform :or)      (merge (:or xform) m)
     (contains? xform :select)  (select-keys (concat (keys (:project xform))
                                                     (:select xform)))
-    (contains? xform :delete)  (#(reduce dissoc % (:delete xform)))
+    (contains? xform :delete)  (#(apply dissoc % (:delete xform)))
     (contains? xform :update)  (#(reduce (fn [m [k f]]
                                            (if (contains? m k)
                                              (update m k f)

@@ -25,7 +25,7 @@ clear manner: `mapx.core/transform`.
 Add the following to your `project.clj`:
 
 ```
-[chrisjd/mapx "0.2.1"]
+[chrisjd/mapx "0.2.2"]
 ```
 
 
@@ -41,6 +41,13 @@ For the examples below:
 ```clojure
 user> (require '[mapx.core :as mx])
 nil
+```
+
+Overwriting or inserting keys:
+
+``` clojure
+user> (mx/transform {:a 1 :b 2 :c 3} :assoc {:a 123 :d 4})
+{:a 123, :b 2, :c 3, :d 4}
 ```
 
 Inserting missing keys:

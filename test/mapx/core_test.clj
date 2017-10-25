@@ -4,6 +4,10 @@
 
 (def in {:a 1 :b 2 :c 3 :d 4 :e 5})
 
+(deftest test-assoc
+  (is (= {:a 42 :b 2 :c 3 :d 123 :e 5 :f 10}
+         (transform in :assoc {:a 42, :d 123, :f 10}))))
+
 (deftest test-or
   (is (= {:a 1 :b 2 :c 3 :d 4 :e 5 :f 7}
          (transform in :or {:a 123, :f 7}))))
