@@ -1,5 +1,7 @@
 # Change Log
 
+## [Unreleased]
+
 ## [0.2.2] - 2017-10-25
 - Add `:assoc`.
 
@@ -33,6 +35,7 @@
 ## 0.1.0 - 2017-09-13
 - Initial code.
 
+[Unreleased]: https://github.com/chrisjd-uk/mapx/compare/0.2.1...HEAD
 [0.2.2]: https://github.com/chrisjd-uk/mapx/compare/0.2.1...0.2.2
 [0.2.1]: https://github.com/chrisjd-uk/mapx/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/chrisjd-uk/mapx/compare/0.1.5...0.2.0
