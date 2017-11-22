@@ -1,8 +1,8 @@
 # mapx
 
-[![License](https://img.shields.io/github/license/fzelogik/mapx.svg)](LICENSE)
+[![License](https://img.shields.io/github/license/chrisjdav/mapx.svg)](LICENSE)
 [![Clojars Project](https://img.shields.io/clojars/v/chrisjd/mapx.svg)](https://clojars.org/chrisjd/mapx)
-[![CircleCI](https://circleci.com/gh/fzelogik/mapx.svg?style=svg)](https://circleci.com/gh/fzelogik/mapx)
+[![CircleCI](https://circleci.com/gh/chrisjdav/mapx.svg?style=svg)](https://circleci.com/gh/chrisjdav/mapx)
 
 A very simple library for performing powerful map transformations in
 Clojure.
@@ -31,7 +31,7 @@ Add the following to your `project.clj`:
 
 ## Documentation
 
-- [API Docs](https://fzelogik.github.io/mapx/)
+- [API Docs](https://chrisjdav.github.io/mapx/)
 
 
 ## Usage
@@ -142,7 +142,7 @@ produce is a well-formed account.
 
 ## Typical Example #2
 
-Using with [speconv](https://github.com/fzelogik/speconv) to
+Using with [speconv](https://github.com/chrisjdav/speconv) to
 succinctly define conversion functions to map the same data between
 two distinct (and spec-validated) contexts:
 
